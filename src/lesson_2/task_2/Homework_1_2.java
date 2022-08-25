@@ -16,7 +16,6 @@ public class Homework_1_2 {
         myList1.add(4);
         System.out.printf("Длина массива - %s количество элементов в массиве - %s", myList1.getArray().length, myList1.getSize());
         System.out.println();
-        System.out.println(myList1);
 
         MyList<String> myList2 = new MyList<>();
         myList2.add("a");
@@ -25,6 +24,20 @@ public class Homework_1_2 {
         myList2.add("d");
         System.out.printf("Длина массива - %s количество элементов в массиве - %s", myList2.getArray().length, myList2.getSize());
         System.out.println();
-        System.out.println(myList2);
+
+        MyListWithToken<Integer> myListWithToken1 = new MyListWithToken<>(Integer.class);
+        myListWithToken1.add(1);
+        myListWithToken1.add(2);
+        myListWithToken1.add(3);
+        myListWithToken1.add(4);
+        System.out.printf("Длина массива - %s количество элементов в массиве - %s", myListWithToken1.getArray().length, myListWithToken1.getSize());
+        System.out.println();
+
+        MyListWithToken<String> myListWithToken2 = new MyListWithToken<>(String.class);
+        myListWithToken2.add("a");
+        myListWithToken2.add("b");
+        myListWithToken2.add("c");
+        myListWithToken2.add("d");
+        System.out.printf("Длина массива - %s количество элементов в массиве - %s", myListWithToken2.getArray().length, myListWithToken2.getSize());
     }
 }
