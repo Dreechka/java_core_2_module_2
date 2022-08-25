@@ -1,30 +1,47 @@
 package lesson_2.task_2;
 
-import java.lang.reflect.Array;
-
+import java.util.Arrays;
 
 public class MyList<T> {
-    T[] objects;
-    int size;
+    private Object[] array;
+    private int size;
 
-    public MyList(Class<T> t) {
-        @SuppressWarnings("unchecked") T[] objects = (T[]) Array.newInstance(t, 3);
-        this.objects = objects;
-        size = 0;
+    public MyList() {
+        array = new Object[3];
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public Object[] getArray() {
+        return array;
     }
 
     public void add(T t) {
-        if (size < objects.length) {
-            objects[size] = t;
+        if (size < array.length) {
+            array[size] = t;
             size++;
         } else {
-            @SuppressWarnings("unchecked") T[] biggerArray = (T[]) Array.newInstance(objects.getClass(), objects.length * 2);
-            for (int i = 0; i < objects.length; i++) {
-                biggerArray[i] = objects[i];
+            Object[] biggerArray = new Object[array.length * 2];
+            for (int i = 0; i < array.length; i++) {
+                biggerArray[i] = array[i];
             }
-            objects = biggerArray;
+            array = biggerArray;
+            array[size] = t;
+            size++;
         }
+    }
 
+    @SuppressWarnings("unchecked")
+    public T get(int index) {
+        return (T) array[index];
+    }
 
+    @Override
+    public String toString() {
+        return "MyList{" +
+                "array=" + Arrays.toString(array) +
+                '}';
     }
 }
