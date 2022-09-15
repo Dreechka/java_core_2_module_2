@@ -1,4 +1,4 @@
-package lesson_7.Classwork;
+package lesson_7.classwork;
 
 public class UserRef {
     @Min(18)

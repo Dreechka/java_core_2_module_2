@@ -42,6 +42,7 @@ public class Runner {
     public static void printDurationMethod(UserMeta userMeta, String prefix) throws InvocationTargetException, IllegalAccessException {
         for (Method declaredMethod : userMeta.getClass().getDeclaredMethods()) {
             if (declaredMethod.isAnnotationPresent(GetMetaData.class)) {
+                declaredMethod.setAccessible(true);
                 long start = System.currentTimeMillis();
                 declaredMethod.invoke(userMeta, prefix);
                 long end = System.currentTimeMillis();

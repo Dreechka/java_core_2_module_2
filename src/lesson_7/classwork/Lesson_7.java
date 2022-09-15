@@ -1,4 +1,4 @@
-package lesson_7.Classwork;
+package lesson_7.classwork;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;

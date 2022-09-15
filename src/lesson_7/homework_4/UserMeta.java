@@ -12,7 +12,7 @@ public class UserMeta {
     }
 
     @GetMetaData
-    public String GetSuperName(String prefix) throws InterruptedException {
+    private String GetSuperName(String prefix) throws InterruptedException {
         Thread.sleep(1000);
         return prefix + name;
     }
